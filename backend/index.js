@@ -18,7 +18,7 @@ app.post("book", async (request, response) => {
       !request.body.publishYear
     ) {
       return response.status(400).send({
-        message: `Send all required fields: title, author, puslishYear`,
+        message: `Send all required fields: title, author, puslishYear IMP`,
       });
     }
     const newBook = {
