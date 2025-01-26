@@ -1,0 +1,65 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+logs/*
+debug.log
+
+# Build files
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Frontend
+/public/static
+/public/build
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+
+# Coverage directory used by testing tools
+coverage/
+
+# Production bundle
+*.bundle.js
+*.bundle.js.map
+
+# Miscellaneous
+*.lock
+*.bak
+*.tmp
+*.cache
+
+# Optional npm cache directory
+.npm/
+
+# Dependencies for SASS or similar preprocessors
+.sass-cache/
+
+# TSLint and ESLint cache
+.eslintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# React/Next.js
+.next/
+out/
+.cache/
