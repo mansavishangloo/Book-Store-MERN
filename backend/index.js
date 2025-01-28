@@ -5,12 +5,14 @@ import { Book } from "./models/bookModel.js";
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/", (request, response) => {
   console.log(request);
   return response.status(234).send("welcome to mern stack Tutorial");
 });
 
-app.post("book", async (request, response) => {
+app.post("/books", async (request, response) => {
   try {
     if (
       !request.body.title ||
@@ -30,6 +32,20 @@ app.post("book", async (request, response) => {
     const book = await Book.create(newBook);
 
     return response.status(201).send(book);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+app.get("/books", async (request, response) => {
+  try {
+    const books = await Book.find({});
+
+    return response.status(200).json({
+      count: books.length,
+      data: books,
+    });
   } catch (error) {
     console.log(error.message);
     response.status(500).send({ message: error.message });
