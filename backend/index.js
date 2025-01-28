@@ -5,12 +5,14 @@ import { Book } from "./models/bookModel.js";
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/", (request, response) => {
   console.log(request);
   return response.status(234).send("welcome to mern stack Tutorial");
 });
 
-app.post("book", async (request, response) => {
+app.post("/books", async (request, response) => {
   try {
     if (
       !request.body.title ||
