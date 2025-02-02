@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-router.get("/", (request, response) => {
+app.get("/", (request, response) => {
   console.log(request);
   return response.status(234).send("welcome to mern stack Tutorial");
 });
